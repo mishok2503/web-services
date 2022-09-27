@@ -10,6 +10,6 @@
 * `/delete?video=<id>` - удалить видео
 * `/change?video=<id>&param=<new-param>` - измениьт мета информацию  
 `param` =
-    * content
-    * name
-    * description
+    * content - само видео
+    * name - название
+    * description - описание
