@@ -6,11 +6,11 @@ class DataBase:
 
     def __init__(self):
         """Init database."""
-        self.data = {}
-        self.cur_video_id = 0
+        self._data = {}
+        self._cur_video_id = 0
 
     def _set_video(self, video: Video):
-        self.data[video.id] = video
+        self._data[video.id] = video
 
     def insert_video(self, name: str, desc: str = "") -> int:
         """Insert new video to database.
@@ -22,9 +22,9 @@ class DataBase:
         Returns:
             int: new video id
         """
-        self.cur_video_id += 1
-        self._set_video(Video(self.cur_video_id, name, desc))
-        return self.cur_video_id
+        self._cur_video_id += 1
+        self._set_video(Video(self._cur_video_id, name, desc))
+        return self._cur_video_id
 
     def update_video(self, video: Video) -> bool:
         """Update video in database if db contains it.
@@ -35,7 +35,7 @@ class DataBase:
         Returns:
             bool: true if video in db
         """
-        if video.id in self.data:
+        if video.id in self._data:
             self._set_video(video)
             return True
         return False
@@ -49,8 +49,8 @@ class DataBase:
         Returns:
             bool: true if video in db
         """
-        if video_id in self.data:
-            del self.data[video_id]
+        if video_id in self._data:
+            del self._data[video_id]
             return True
         return False
 
@@ -63,9 +63,14 @@ class DataBase:
         Returns:
             Video | None: video if it exists in db
         """
-        if video_id in self.data:
-            return self.data[video_id]
+        if video_id in self._data:
+            return self._data[video_id]
         return None
+
+    def clear(self):
+        """Clear database"""
+        self._cur_video_id = 0
+        self._data = {}
 
 
 database = DataBase()
