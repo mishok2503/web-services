@@ -10,3 +10,5 @@ class BasicTest(unittest.TestCase):
     def test_base(self):
         """Test basic."""
         self.assertEqual(router.upload_http("some name")["id"], 1)
+        self.assertEqual(router.upload_http("more name")["id"], 2)
+        self.assertEqual(router.upload_http("new name")["id"], 3)

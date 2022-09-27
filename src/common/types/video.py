@@ -21,3 +21,7 @@ class Video:
                 and self.id == __o.id
             )
         return False
+
+    def to_json(self):
+        """Video to json."""
+        return {"id": self.id, "name": self.name, "description": self.description}
