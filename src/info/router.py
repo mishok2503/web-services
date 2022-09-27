@@ -5,6 +5,6 @@ router = APIRouter()
 
 
 @router.get("", response_class=JSONResponse)
-def info_http(video_id: int) -> str:
+def info_http() -> str:
     """Meta info about video."""
-    return {"name": "ABC", "description": "BCA", "id": video_id}
+    return {"name": "ABC"}

@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 
-from .routers.change.router import router as change_router
-from .routers.delete.router import router as delete_router
-from .routers.info.router import router as info_router
-from .routers.upload.router import router as upload_router
-from .routers.watch.router import router as watch_router
+from src.change.router import router as change_router
+from src.delete.router import router as delete_router
+from src.info.router import router as info_router
+from src.upload.router import router as upload_router
+from src.watch.router import router as watch_router
 
 app = FastAPI(title="Video Hosting")
 
