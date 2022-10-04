@@ -10,7 +10,7 @@ class Service(PlayerBackendServicer):
 
     def get_player_version(self, request, context):
         """Return default player version."""
-        return PlayerVersion(1, 0)
+        return PlayerVersion(version=1, sub_version=0)
 
 
 def execute_server():

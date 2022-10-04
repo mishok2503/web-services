@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "google/protobuf/empty.proto";
+message Null {}
 
 // Player version struct
 message PlayerVersion {
@@ -11,5 +11,5 @@ message PlayerVersion {
 // Player backend server.
 service PlayerBackend {
   // Return player version.
-  rpc get_player_version(google.protobuf.Empty) returns (PlayerVersion) {}
+  rpc get_player_version(Null) returns (PlayerVersion);
 }
