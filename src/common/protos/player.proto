@@ -11,5 +11,5 @@ message PlayerVersion {
 // Player backend server.
 service PlayerBackend {
   // Return player version.
-  rpc GetPlayerVersion(google.protobuf.Empty) returns (PlayerVersion) {}
+  rpc get_player_version(google.protobuf.Empty) returns (PlayerVersion) {}
 }
