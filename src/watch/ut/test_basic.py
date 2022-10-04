@@ -8,4 +8,4 @@ class BasicTest(unittest.TestCase):
 
     def test_base(self):
         """Test basic."""
-        self.assertEqual(router.watch_http(), "Watch")
+        self.assertEqual(router.watch_http(), "Player version: 1.0")
