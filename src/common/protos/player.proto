@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message Null {}
+
+// Player version struct
+message PlayerVersion {
+  uint32 version = 1;
+  uint32 sub_version = 2;
+}
+
+// Player backend server.
+service PlayerBackend {
+  // Return player version.
+  rpc get_player_version(Null) returns (PlayerVersion);
+}
