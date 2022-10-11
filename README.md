@@ -19,3 +19,10 @@
 ```
 python -m unittest
 ```
+### Выбор СУБД
+
+#### Redis
+
+#### PostgreSQL
+
+#### MySQL
